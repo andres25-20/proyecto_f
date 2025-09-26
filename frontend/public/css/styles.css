@@ -1,6 +1,4 @@
-/* ===========================
-   ESTILOS GENERALES
-   =========================== */
+
    body {
     font-family: Arial, sans-serif;
     background-color: #f7faff;
@@ -15,9 +13,7 @@
     box-sizing: border-box;
 }
 
-/* ===========================
-   CABECERA
-   =========================== */
+
 header {
     background-color: #1E3A8A;
     color: white;
@@ -27,9 +23,7 @@ header {
     font-weight: bold;
 }
 
-/* ===========================
-   LAYOUT PRINCIPAL
-   =========================== */
+
 .main-container {
     display: flex;
     justify-content: space-between;
@@ -38,9 +32,7 @@ header {
     padding: 20px;
 }
 
-/* ===========================
-   FORMULARIO
-   =========================== */
+
 form {
     background-color: white;
     padding: 20px;
@@ -85,9 +77,6 @@ form button:hover {
     background-color: #1dacd8;
 }
 
-/* ===========================
-   TABLA
-   =========================== */
 .table-container {
     flex: 2;
     background-color: white;
@@ -112,14 +101,10 @@ table th {
     color: white;
 }
 
-/* Filas pares alternadas */
 table tr:nth-child(even) {
     background-color: #f1f5f9;
 }
 
-/* ===========================
-   BOTONES DE ACCIÓN EN TABLA
-   =========================== */
 td button {
     margin: 0 3px;
     padding: 5px 8px;
@@ -148,9 +133,7 @@ td button:hover {
     background-color: #dc2626;
 }
 
-/* ===========================
-RESPONSIVE DESIGN
-   =========================== */
+
 @media (max-width: 720px) {
     
     .main-container {
@@ -187,11 +170,11 @@ RESPONSIVE DESIGN
 
     table td {
         text-align: right;
-        padding: 8px 10px 8px 100px; /* <-- espacio a la izquierda para que el label no se superponga */
+        padding: 8px 10px 8px 100px; 
         border: none;
         border-bottom: 1px solid #eee;
         position: relative;
-        word-break: break-word; /* <-- permite que el texto se ajuste en varias líneas */
+        word-break: break-word; 
     }
 
     table tr td:first-child {
@@ -202,7 +185,6 @@ RESPONSIVE DESIGN
         border-bottom: none;
     }
 
-    /* Etiquetas tipo "data-label" */
     table td::before {
         content: attr(data-label);
         position: absolute;
@@ -211,16 +193,16 @@ RESPONSIVE DESIGN
         font-weight: bold;
         color: #1e3a8a;
         text-align: left;
-        width: 100px; /* <-- ancho fijo para alinear etiquetas */
+        width: 100px; 
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    /* Botones en bloque, centrados */
+    
     table td[data-label="Acciones"] {
         text-align: center;
-        padding-left: 10px; /* sin espacio reservado para label */
+        padding-left: 10px;
     }
 
     table td[data-label="Acciones"] .action-btn {
@@ -314,7 +296,7 @@ table tr:nth-child(even) {
 table tr:hover {
   background: #f1f1f1;
 }
-/* ============= HERO SECTION ============= */
+
 .hero {
   background: linear-gradient(to right, #2d89ef, #1b5bbf);
   color: white;
@@ -362,7 +344,7 @@ table tr:hover {
   transform: scale(1.05);
 }
 
-/* ============= FOOTER ============= */
+
 footer {
   background: #1b5bbf;
   color: white;
@@ -370,9 +352,7 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
-/* =========================== */
-/* TOAST NOTIFICATIONS         */
-/* =========================== */
+
 #toast-container {
   position: fixed;
   top: 20px;
@@ -393,9 +373,9 @@ footer {
   animation: fadeIn 0.5s, fadeOut 0.5s 2.5s forwards;
 }
 
-.toast.success { background: #16a34a; }   /* Verde */
-.toast.error   { background: #dc2626; }   /* Rojo */
-.toast.info    { background: #2563eb; }   /* Azul */
+.toast.success { background: #16a34a; }   
+.toast.error   { background: #dc2626; }   
+.toast.info    { background: #2563eb; }   
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
