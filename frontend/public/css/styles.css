@@ -1,0 +1,408 @@
+/* ===========================
+   ESTILOS GENERALES
+   =========================== */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f7faff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ===========================
+   CABECERA
+   =========================== */
+header {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+   =========================== */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===========================
+   FORMULARIO
+   =========================== */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 350px;
+    width: 100%;
+}
+
+form h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    display: block;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background-color: #1dacd8;
+}
+
+/* ===========================
+   TABLA
+   =========================== */
+.table-container {
+    flex: 2;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+table th {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Filas pares alternadas */
+table tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+/* ===========================
+   BOTONES DE ACCIÓN EN TABLA
+   =========================== */
+td button {
+    margin: 0 3px;
+    padding: 5px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+td button:hover {
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    background-color: #f5d93b8e;
+}
+.btn-edit:hover {
+    background-color: #f5d93b;
+}
+.btn-delete {
+    background-color: #ef4444;
+    color: white;
+}
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+/* ===========================
+RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 720px) {
+    
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        min-width: 200px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        border: 0;
+        min-width: unset;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+
+    table tr {
+        margin-bottom: 12px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        padding: 10px;
+    }
+
+    table td {
+        text-align: right;
+        padding: 8px 10px 8px 100px; /* <-- espacio a la izquierda para que el label no se superponga */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        word-break: break-word; /* <-- permite que el texto se ajuste en varias líneas */
+    }
+
+    table tr td:first-child {
+        margin-top: 5px;
+    }
+
+    table td:last-child {
+        border-bottom: none;
+    }
+
+    /* Etiquetas tipo "data-label" */
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        font-weight: bold;
+        color: #1e3a8a;
+        text-align: left;
+        width: 100px; /* <-- ancho fijo para alinear etiquetas */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Botones en bloque, centrados */
+    table td[data-label="Acciones"] {
+        text-align: center;
+        padding-left: 10px; /* sin espacio reservado para label */
+    }
+
+    table td[data-label="Acciones"] .action-btn {
+        display: inline-block;
+        margin: 4px 5px;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        width: auto;
+    }
+    
+}   
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+nav {
+  background: #2d89ef;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 { margin: 0; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+}
+
+.form-section, .table-section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #2d89ef;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #1b5bbf;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #f1f1f1;
+}
+/* ============= HERO SECTION ============= */
+.hero {
+  background: linear-gradient(to right, #2d89ef, #1b5bbf);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-main {
+  background: #fff;
+  color: #2d89ef;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-main:hover {
+  background: #e6e6e6;
+  transform: scale(1.05);
+}
+
+/* ============= FOOTER ============= */
+footer {
+  background: #1b5bbf;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+/* =========================== */
+/* TOAST NOTIFICATIONS         */
+/* =========================== */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  min-width: 250px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s, fadeOut 0.5s 2.5s forwards;
+}
+
+.toast.success { background: #16a34a; }   /* Verde */
+.toast.error   { background: #dc2626; }   /* Rojo */
+.toast.info    { background: #2563eb; }   /* Azul */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-20px); }
+}

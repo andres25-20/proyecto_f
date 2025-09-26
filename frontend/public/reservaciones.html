@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservaciones</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="toast-container"></div>
+  <nav>
+    <h1>Sistema - Reservaciones</h1>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="empleados.html">Empleados</a></li>
+      <li><a href="inventario.html">Inventario</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="form-section">
+      <h2>Nueva Reservación</h2>
+      <form id="formReservacion">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="apellido" placeholder="Apellido" required>
+        <input type="text" name="telefono" placeholder="Teléfono" required>
+        <input type="text" name="habitacion" placeholder="Habitación" required>
+        <input type="date" name="fecha_entrada" required>
+        <input type="date" name="fecha_salida" required>
+        <input type="number" name="precio" placeholder="Precio" min="0" required>
+        <button type="submit">Guardar</button>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Lista de Reservaciones</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Habitación</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tblReservaciones"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/reservaciones.js"></script>
+</body>
+</html>
